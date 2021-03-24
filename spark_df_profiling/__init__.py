@@ -17,6 +17,8 @@ class ProfileReport(object):
         sample = df.limit(sample).toPandas()
 
         description_set = describe(df, bins=bins, corr_reject=corr_reject, config=config, **kwargs)
+        
+        print(type(description_set))
 
         self.html = to_html(sample,
                             description_set)
