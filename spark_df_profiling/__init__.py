@@ -64,6 +64,7 @@ class ProfileReport(object):
     def to_file(self, outputfile=DEFAULT_OUTPUTFILE):
         if outputfile != NO_OUTPUTFILE:
             if outputfile == DEFAULT_OUTPUTFILE:
+                print("TESTING")
                 outputfile = 'profile_' + str(hash(self)) + ".html"
 
             self.file = codecs.open(outputfile, 'w+b', encoding='utf8')
