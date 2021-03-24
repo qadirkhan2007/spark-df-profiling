@@ -18,8 +18,8 @@ class ProfileReport(object):
 
         description_set = describe(df, bins=bins, corr_reject=corr_reject, config=config, **kwargs)
         
-        print("TESTING")
-        #print(description_set)
+        #print("TESTING")
+        print(description_set)
   
 
         self.html = to_html(sample,
@@ -64,7 +64,7 @@ class ProfileReport(object):
     def to_file(self, outputfile=DEFAULT_OUTPUTFILE):
         if outputfile != NO_OUTPUTFILE:
             if outputfile == DEFAULT_OUTPUTFILE:
-                print("TESTING")
+                #print("TESTING")
                 outputfile = 'profile_' + str(hash(self)) + ".html"
 
             self.file = codecs.open(outputfile, 'w+b', encoding='utf8')
