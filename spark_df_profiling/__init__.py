@@ -27,11 +27,10 @@ class ProfileReport(object):
         sample = df.limit(sample).toPandas()
 
         description_set = describe(df, bins=bins, corr_reject=corr_reject, config=config, **kwargs)
-        
+        print json.dumps(description_set,sort_keys=True, indent=4)
+      
         #print("TESTING")
         #pretty(description_set, 0)
-         
-         print json.dumps(description_set,sort_keys=True, indent=4)
   
         self.html = to_html(sample,
                             description_set)
