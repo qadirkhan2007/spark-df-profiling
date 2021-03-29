@@ -43,7 +43,10 @@ class ProfileReport(object):
 
         description_set = describe(df, bins=bins, corr_reject=corr_reject, config=config, **kwargs)
         
-        print(pretty(description_set))
+        #print(pretty(description_set))
+        print(pretty(description_set['table']))
+        print(pretty(description_set['variables']))
+        print(pretty(description_set['freq']))
       
         #print("TESTING")
         #pretty(description_set, 0)
