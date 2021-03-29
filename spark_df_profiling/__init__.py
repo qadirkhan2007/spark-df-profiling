@@ -9,13 +9,28 @@ NO_OUTPUTFILE = "spark_df_profiling.no_outputfile"
 DEFAULT_OUTPUTFILE = "spark_df_profiling.default_outputfile"
 
 
-def pretty(d, indent=0):
-   for key, value in d.items():
-      print('\t' * indent + str(key))
-      if isinstance(value, dict):
-         pretty(value, indent+1)
-      else:
-         print('\t' * (indent+1) + str(value))
+def pretty(value, htchar='\t', lfchar='\n', indent=0):
+    nlch = lfchar + htchar * (indent + 1)
+    if type(value) is dict:
+        items = [
+            nlch + repr(key) + ': ' + pretty(value[key], htchar, lfchar, indent + 1)
+            for key in value
+        ]
+        return '{%s}' % (','.join(items) + lfchar + htchar * indent)
+    elif type(value) is list:
+        items = [
+            nlch + pretty(item, htchar, lfchar, indent + 1)
+            for item in value
+        ]
+        return '[%s]' % (','.join(items) + lfchar + htchar * indent)
+    elif type(value) is tuple:
+        items = [
+            nlch + pretty(item, htchar, lfchar, indent + 1)
+            for item in value
+        ]
+        return '(%s)' % (','.join(items) + lfchar + htchar * indent)
+    else:
+        return repr(value)
 
 
 class ProfileReport(object):
@@ -27,7 +42,8 @@ class ProfileReport(object):
         sample = df.limit(sample).toPandas()
 
         description_set = describe(df, bins=bins, corr_reject=corr_reject, config=config, **kwargs)
-        print yaml.dump(description_set,default_flow_style=False)
+        
+        print(pretty(description_set))
       
         #print("TESTING")
         #pretty(description_set, 0)
