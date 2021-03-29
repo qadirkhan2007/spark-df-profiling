@@ -1,6 +1,7 @@
 
 import codecs
 import os
+import json
 from .templates import template
 from .base import describe, to_html
 
@@ -28,9 +29,10 @@ class ProfileReport(object):
         description_set = describe(df, bins=bins, corr_reject=corr_reject, config=config, **kwargs)
         
         #print("TESTING")
-        pretty(description_set, 0)
+        #pretty(description_set, 0)
+         
+         print json.dumps(description_set,sort_keys=True, indent=4)
   
-
         self.html = to_html(sample,
                             description_set)
 
