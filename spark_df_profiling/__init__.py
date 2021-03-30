@@ -51,17 +51,20 @@ class ProfileReport(object):
 
     def export_df(self, export_path, tm_stamp):
         
-        overview = pd.DataFrame(eval(pretty(self.description_set['table'])))
-        variables = pd.DataFrame(eval(pretty(self.description_set['variables'])))
-        frequency = pd.DataFrame(eval(pretty(self.description_set['freq'])))
+        #overview = pd.DataFrame(eval(pretty(self.description_set['table'])))
+        #variables = pd.DataFrame(eval(pretty(self.description_set['variables'])))
+        #frequency = pd.DataFrame(eval(pretty(self.description_set['freq'])))
+        
+        print(type(pretty(self.description_set['table'])))
+        print(pretty(self.description_set['table']))
         
         #print(overview)
         #print(variables)
         #print(frequency)        
         
-        overview.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Overview')
-        variables.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Variables')
-        frequency.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Frequency')
+        #overview.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Overview')
+        #variables.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Variables')
+        #frequency.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Frequency')
         
     def render_standalone(self, mode="databricks", utils=None):
         if mode != "databricks":
