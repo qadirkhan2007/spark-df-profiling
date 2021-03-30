@@ -45,11 +45,11 @@ class ProfileReport(object):
         
         #print(pretty(description_set))
         print(pretty(description_set['table']['n']))
-        #print(pretty(description_set['variables']))
-        #print(pretty(description_set['freq']))
+        print(pretty(description_set['variables']))
+        print(pretty(description_set['freq']))
       
         #print(to_html(sample,description_set['table'])) - Not working
-        print(to_html(sample,description_set))
+        #print(to_html(sample,description_set))
         
         self.html = to_html(sample,
                             description_set)
