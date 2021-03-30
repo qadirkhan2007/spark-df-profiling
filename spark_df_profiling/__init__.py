@@ -2,6 +2,7 @@
 import codecs
 import os
 import yaml
+import pandas as pd
 from .templates import template
 from .base import describe, to_html
 
@@ -50,9 +51,9 @@ class ProfileReport(object):
 
     def export_df(self, export_path, tm_stamp):
         
-        overview = pretty(self.description_set['table'])
-        variables = pretty(self.description_set['variables'])
-        frequency = pretty(self.description_set['freq'])
+        overview = pd.DataFrame(pretty(self.description_set['table']))
+        variables = pd.DataFrame(pretty(self.description_set['variables']))
+        frequency = pd.DataFrame(pretty(self.description_set['freq']))
         
         #print(overview)
         #print(variables)
