@@ -51,9 +51,9 @@ class ProfileReport(object):
 
     def export_df(self, export_path, tm_stamp):
         
-        overview = pd.DataFrame(pretty(self.description_set['table']))
-        variables = pd.DataFrame(pretty(self.description_set['variables']))
-        frequency = pd.DataFrame(pretty(self.description_set['freq']))
+        overview = pd.DataFrame(eval(pretty(self.description_set['table'])))
+        variables = pd.DataFrame(eval(pretty(self.description_set['variables'])))
+        frequency = pd.DataFrame(eval(pretty(self.description_set['freq'])))
         
         #print(overview)
         #print(variables)
