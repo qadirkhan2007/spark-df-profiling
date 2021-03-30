@@ -664,6 +664,7 @@ def to_html(sample, stats_object):
 
     messages_html = u''
     for msg in messages:
+        print(msg)
         messages_html += templates.message_row.format(message=msg)
 
     overview_html = templates.template('overview').render(values=formatted_values, row_classes = row_classes, messages=messages_html)
