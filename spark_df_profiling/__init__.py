@@ -3,6 +3,7 @@ import codecs
 import os
 import yaml
 import pandas as pd
+import re
 from .templates import template
 from .base import describe, to_html
 
@@ -59,6 +60,8 @@ class ProfileReport(object):
         print(pretty(self.description_set['table']))
         
         overview = pretty(self.description_set['table']).strip('}{').split(',')
+        regex = re.compile(r'[\n\r\t]')
+        overview = regex.sub("",overview)
         print ("final table", overview)
         print (type(overview))
         
