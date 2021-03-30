@@ -55,7 +55,7 @@ class ProfileReport(object):
         return overview
     
     def export_df_variables(self, export_path, tm_stamp):
-        overview = pd.DataFrame(pretty(self.description_set['variables']).strip('}{').split(','))
+        variables = pd.DataFrame(pretty(self.description_set['variables']).strip('}{').split(','))
         return variables
     
     def export_df_frequency(self, export_path, tm_stamp):
