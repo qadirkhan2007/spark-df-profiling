@@ -72,7 +72,9 @@ class ProfileReport(object):
         print(export_path)
         print(tm_stamp)
         
-        overview.to_excel('/dbfs'+''+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Overview')
+        print(os.getcwd())
+        
+        #overview.to_excel('/dbfs'+''+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Overview')
         #variables.to_excel('/dbfs'+''+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Variables')
         #frequency.to_excel('/dbfs'+''+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Frequency')
         
