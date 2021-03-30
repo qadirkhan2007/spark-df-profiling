@@ -59,7 +59,7 @@ class ProfileReport(object):
         print(type(pretty(self.description_set['table'])))
         print(pretty(self.description_set['table']))
                
-        overview = pretty(self.description_set['table']).strip('}{').split(',')
+        overview = pd.DataFrame(pretty(self.description_set['table']).strip('}{').split(','))
         #regex = re.compile(r'[\n\r\t]')
         #overview = regex.sub("",overview)
         print ("final table", overview)
