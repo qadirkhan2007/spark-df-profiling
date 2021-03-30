@@ -60,6 +60,11 @@ class ProfileReport(object):
 
         self.description_set = description_set
 
+    def export_df(export_path, tm_stamp):
+        overview.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Overview')
+        variables.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Variables')
+        frequency.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Frequency')
+        
     def render_standalone(self, mode="databricks", utils=None):
         if mode != "databricks":
             raise NotImplementedError("Only databricks mode is supported for now")
