@@ -66,7 +66,7 @@ class ProfileReport(object):
         #frequency = pd.DataFrame(pretty(self.description_set['freq']).strip('}{').split(','))
         frequency = self.description_set['freq']
         
-        print(type(frequency))
+        #print(type(frequency))
         #print(frequency)
         
         return frequency
