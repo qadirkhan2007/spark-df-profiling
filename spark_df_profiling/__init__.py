@@ -58,7 +58,7 @@ class ProfileReport(object):
         print(type(pretty(self.description_set['table'])))
         print(pretty(self.description_set['table']))
         
-        overview = ini_list.strip('}{').split(',')
+        overview = pretty(self.description_set['table']).strip('}{').split(',')
         print ("final table", overview)
         print (type(overview))
         
