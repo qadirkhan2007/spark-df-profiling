@@ -48,7 +48,7 @@ class ProfileReport(object):
 
         self.description_set = description_set
 
-    def export_df(export_path, tm_stamp):
+    def export_df(self, export_path, tm_stamp):
         
         overview = pretty(description_set['table'])
         variables = pretty(description_set['variables'])
