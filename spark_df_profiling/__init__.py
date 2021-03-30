@@ -55,20 +55,11 @@ class ProfileReport(object):
         return overview
     
     def export_df_variables(self, export_path, tm_stamp):
-        #variables = pd.DataFrame(pretty(self.description_set['variables']).strip('}{').split(','))
         variables = self.description_set['variables']
-        print(type(variables))
-        #print(variables)
-        
         return variables
     
     def export_df_frequency(self, export_path, tm_stamp):
-        #frequency = pd.DataFrame(pretty(self.description_set['freq']).strip('}{').split(','))
         frequency = self.description_set['freq']
-        
-        #print(type(frequency))
-        #print(frequency)
-        
         return frequency
         
         #overview.to_excel('/dbfs'+''+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Overview')
