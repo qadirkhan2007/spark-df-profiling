@@ -42,25 +42,22 @@ class ProfileReport(object):
         sample = df.limit(sample).toPandas()
 
         description_set = describe(df, bins=bins, corr_reject=corr_reject, config=config, **kwargs)
-        
-        #print(pretty(description_set))
-        overview = pretty(description_set['table'])
-        variables = pretty(description_set['variables'])
-        frequency = pretty(description_set['freq'])
-        
-        print(overview)
-        print(variables)
-        print(frequency)        
       
-        #print(to_html(sample,description_set['table'])) - Not working
-        #print(to_html(sample,description_set))
-        
         self.html = to_html(sample,
                             description_set)
 
         self.description_set = description_set
 
     def export_df(export_path, tm_stamp):
+        
+        overview = pretty(description_set['table'])
+        variables = pretty(description_set['variables'])
+        frequency = pretty(description_set['freq'])
+        
+        #print(overview)
+        #print(variables)
+        #print(frequency)        
+        
         overview.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Overview')
         variables.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Variables')
         frequency.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Frequency')
