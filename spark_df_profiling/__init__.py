@@ -58,7 +58,7 @@ class ProfileReport(object):
         #variables = pd.DataFrame(pretty(self.description_set['variables']).strip('}{').split(','))
         variables = self.description_set['variables']
         print(type(variables))
-        print(variables)
+        #print(variables)
         
         return variables
     
@@ -67,7 +67,7 @@ class ProfileReport(object):
         frequency = self.description_set['freq']
         
         print(type(frequency))
-        print(frequency)
+        #print(frequency)
         
         return frequency
         
