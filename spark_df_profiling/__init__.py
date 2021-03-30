@@ -50,9 +50,9 @@ class ProfileReport(object):
 
     def export_df(self, export_path, tm_stamp):
         
-        overview = pretty(description_set['table'])
-        variables = pretty(description_set['variables'])
-        frequency = pretty(description_set['freq'])
+        overview = pretty(self.description_set['table'])
+        variables = pretty(self.description_set['variables'])
+        frequency = pretty(self.description_set['freq'])
         
         #print(overview)
         #print(variables)
