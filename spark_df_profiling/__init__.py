@@ -50,29 +50,31 @@ class ProfileReport(object):
 
         self.description_set = description_set
 
-    def export_df(self, export_path, tm_stamp):
+    def export_df_overview(self, export_path, tm_stamp):
         
         #overview = pd.DataFrame(eval(pretty(self.description_set['table'])))
         #variables = pd.DataFrame(eval(pretty(self.description_set['variables'])))
         #frequency = pd.DataFrame(eval(pretty(self.description_set['freq'])))
        
-        print(type(pretty(self.description_set['table'])))
-        print(pretty(self.description_set['table']))
+        #print(type(pretty(self.description_set['table'])))
+        #print(pretty(self.description_set['table']))
                
         overview = pd.DataFrame(pretty(self.description_set['table']).strip('}{').split(','))
         #regex = re.compile(r'[\n\r\t]')
         #overview = regex.sub("",overview)
-        print ("final table", overview)
-        print (type(overview))
+        #print ("final table", overview)
+        #print (type(overview))
         
         #print(overview)
         #print(variables)
         #print(frequency)        
         
-        print(export_path)
-        print(tm_stamp)
+        #print(export_path)
+        #print(tm_stamp)
         
-        print(os.getcwd())
+        #print(os.getcwd())
+        
+        return overview
         
         #overview.to_excel('/dbfs'+''+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Overview')
         #variables.to_excel('/dbfs'+''+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Variables')
