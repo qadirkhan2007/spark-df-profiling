@@ -69,9 +69,12 @@ class ProfileReport(object):
         #print(variables)
         #print(frequency)        
         
-        overview.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Overview')
-        #variables.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Variables')
-        #frequency.to_excel(export_path+''+tm_stamp+''+'profile_summary.xlsx', sheet_name='Frequency')
+        print(export_path)
+        print(
+        
+        overview.to_excel("/dbfs"+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Overview')
+        #variables.to_excel("/dbfs"+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Variables')
+        #frequency.to_excel("/dbfs"+export_path+''+tm_stamp+''+'_profile_summary.xlsx', sheet_name='Frequency')
         
     def render_standalone(self, mode="databricks", utils=None):
         if mode != "databricks":
